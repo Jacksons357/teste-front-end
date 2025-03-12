@@ -1,15 +1,16 @@
-import ShieldCheck from '../assets/icons/ShieldCheck.png'
-import Truck from '../assets/icons/Truck.png'
-import CreditCard from '../assets/icons/CreditCard.png'
+import styles from '@/styles/components/header.module.sass'
 
-import Logo from '../assets/Logo.png'
-import Package from '../assets/icons/Package.png'
-import Heart from '../assets/icons/Heart.png'
-import UserCircle from '../assets/icons/UserCircle.png'
-import ShoppingCart from '../assets/icons/ShoppingCart.png'
+import ShieldCheck from '@/assets/icons/header/ShieldCheck.png'
+import Truck from '@/assets/icons/header/Truck.png'
+import CreditCard from '@/assets/icons/header/CreditCard.png'
+
+import Logo from '@/assets/Logo.png'
+import Package from '@/assets/icons/header/Package.png'
+import Heart from '@/assets/icons/header/Heart.png'
+import UserCircle from '@/assets/icons/header/UserCircle.png'
+import ShoppingCart from '@/assets/icons/header/ShoppingCart.png'
 
 import { TbCrown } from 'react-icons/tb'
-
 import SearchInput from './SearchInput'
 
 const tags = [
@@ -36,9 +37,7 @@ const tags = [
     alt: 'Icone de cartão de crédito',
     text: (
       <>
-        <p>
-          <strong>Parcele</strong> suas compras
-        </p>
+        <strong>Parcele</strong> suas compras
       </>
     ),
   },
@@ -101,8 +100,8 @@ const itemsNavBar = [
 
 export default function Header() {
   return (
-    <header className="header">
-      <ul className="header_tags">
+    <header className={styles.header}>
+      <ul className={styles.header_tags}>
         {tags.map((tag, index) => (
           <li key={index}>
             <img src={tag.icon} alt={tag.alt} />
@@ -111,12 +110,14 @@ export default function Header() {
         ))}
       </ul>
 
-      <div className="header_bar">
-        <img src={Logo} alt="logo da econverse" className="logo" />
+      <div className={styles.header_bar}>
+        <a href="">
+          <img src={Logo} alt="logo da econverse" className={styles.logo} />
+        </a>
 
         <SearchInput />
 
-        <ul className="header_bar_items">
+        <ul className={styles.header_bar_items}>
           {itemsShortcut.map((item, index) => (
             <li key={index}>
               <a href={item.url}>
@@ -127,8 +128,8 @@ export default function Header() {
         </ul>
       </div>
 
-      <nav className="header_navbar">
-        <ul className="header_navbar_list">
+      <nav className={styles.header_navbar}>
+        <ul className={styles.header_navbar_list}>
           {itemsNavBar.map((item, index) => (
             <li key={index}>
               <a href={item.url}>

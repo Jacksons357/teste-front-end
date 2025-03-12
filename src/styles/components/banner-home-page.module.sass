@@ -1,0 +1,36 @@
+@use '../variables' as *
+
+.content_banner
+  background-image: url('../../assets/Banner.jpg')
+  background-size: cover
+  background-position: center
+  background-repeat: no-repeat
+  height: 390px
+  padding: 78px 0
+
+  .content
+    max-width: 1280px
+    flex-direction: column
+    margin: auto
+
+    h1
+      color: $white
+      font-size: 48px
+      line-height: 1.1
+      font-weight: 600
+      margin-bottom: 10px
+      text-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1)
+
+    h2
+      color: $white
+      font-size: 32px
+      font-weight: 300
+      margin-bottom: 41px
+      text-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1)
+
+      strong
+        color: $secondary-color
+        font-weight: 700
+
+    .button
+      padding: 13px 54px

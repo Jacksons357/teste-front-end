@@ -1,0 +1,32 @@
+@use '../variables' as *
+
+.content
+  display: flex
+  flex-direction: column
+  gap: 22px
+
+  h1
+    color: $gray-300
+    font-size: 14px
+    text-align: center
+    font-weight: 500
+
+    &:hover
+      color: $primary-color
+
+.content_image
+  background-color: #F4F4F4
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3)
+  padding: 34px
+  display: flex
+  justify-content: center
+  align-items: center
+  transition: 0.3s
+  border-radius: 10px
+
+  &:hover
+    box-shadow: 0 4px 8px rgba(24, 0, 163, 0.5)
+
+  img
+    width: 61px
+    height: 61px

@@ -1,9 +1,13 @@
-import Header from './components/Header'
+import { Route, Routes } from 'react-router'
+import Home from './pages/Home'
+import Layout from './layout'
 
 export default function App() {
   return (
-    <>
-      <Header />
-    </>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<Home />} />
+      </Route>
+    </Routes>
   )
 }

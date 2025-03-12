@@ -1,17 +1,19 @@
-import MagnifyingGlass from '../assets/icons/MagnifyingGlass.png'
+import styles from '@/styles/components/search-input.module.sass'
+
+import MagnifyingGlass from '@/assets/icons/header/MagnifyingGlass.png'
 
 export default function SearchInput() {
   return (
-    <div className="search-input-container">
+    <div className={styles.search_input_content}>
       <input
         type="text"
         placeholder="O que você está buscando?"
-        className="search-input"
+        className={styles.search_input}
       />
       <img
         src={MagnifyingGlass}
         alt="Ícone de pesquisa"
-        className="search-icon"
+        className={styles.search_icon}
       />
     </div>
   )
