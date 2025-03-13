@@ -1,11 +1,17 @@
 export async function fetchProducts(): Promise<ProductsResponse> {
-  const response = await fetch('/api/products')
+  try {
+    const response = await fetch('/api/products')
 
-  if (!response.ok) {
-    throw new Error('Erro ao buscar produtos')
+    if (!response.ok) {
+      throw new Error('Erro ao buscar produtos')
+    }
+
+    const data: ProductsResponse = await response.json()
+
+    return data
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error)
+
+    return { success: false, products: [] }
   }
-
-  const data: ProductsResponse = await response.json()
-
-  return data
 }

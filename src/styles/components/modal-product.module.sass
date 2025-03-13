@@ -1,0 +1,115 @@
+@use '../variables' as *
+
+.modal_open
+  overflow: hidden
+
+.container
+  position: fixed
+  top: 0
+  left: 0
+  width: 100%
+  height: 100%
+  background: rgba(0, 0, 0, 0.6)
+  display: flex
+  align-items: center
+  justify-content: center
+  padding: 20px
+  z-index: 15
+
+  .modal
+    padding: 50px
+    background: #fff
+    width: 769px
+    border-radius: 8px
+    position: relative
+    display: grid
+    grid-template-columns: 1fr 1fr
+
+    .closeButton
+      color: $gray-300
+      opacity: 70%
+      position: absolute
+      top: 10px
+      right: 15px
+      cursor: pointer
+
+  .modalImage
+    img
+      width: 247px
+      height: 192px
+      height: auto
+      display: block
+      border-top-left-radius: 8px
+      border-bottom-left-radius: 8px
+
+  .modal_details
+    padding: 20px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+
+    a
+      font-size: 11px
+      color: $primary-color
+      margin-bottom: 20px
+      font-weight: 600
+
+    .modal_details_title
+      display: flex
+      flex-direction: column
+      font-size: 20px
+      text-transform: uppercase
+      font-weight: 300
+      color: $gray-300
+
+  .price
+    font-size: 20px
+    font-weight: 600
+    color: $gray-300
+
+    p
+      font-size: 16px
+      color: #555
+      margin-bottom: 10px
+
+  .description_short
+    font-size: 10px
+    color: $gray-200
+
+  .container_controls
+    display: flex
+    align-items: center
+    gap: 10px
+
+  .controls
+    width: 110px
+    display: flex
+    justify-content: space-around
+    align-items: center
+    border: 1px solid $gray-150
+    padding: 1px
+    border-radius: 6px
+    font-size: 16px
+
+    .controls_less
+      font-size: 24px
+      color: $gray-300
+      cursor: pointer
+
+    .controls_more
+      font-size: 21px
+      color: $gray-300
+      cursor: pointer
+
+  .button_buy
+    background-color: $secondary-color
+    padding: 7.5px
+    width: 188px
+    font-weight: 600
+    color: $gray-300
+    border-radius: 6px
+    cursor: pointer
+    transition: 0.2s
+
+    &:hover
+      opacity: 90%
