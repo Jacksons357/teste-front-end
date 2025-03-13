@@ -1,4 +1,32 @@
 @use '../variables' as *
 
 .topic_navigation
-  margin: 39px 0 90px
+  max-width: 1280px
+  margin: 39px auto 90px auto
+
+.related_products
+  max-width: 1280px
+  margin: 90px auto
+
+.partners
+  max-width: 1280px
+  margin: 90px auto
+  display: grid
+  grid-template-columns: repeat(2, 1fr)
+  gap: 13px
+
+.brands
+  max-width: 1280px
+  margin: 90px auto
+  display: flex
+  flex-direction: column
+  align-items: center
+  gap: 32px
+
+  h1
+    color: $primary-color
+    font-size: 30px
+
+  .brands_item
+    display: flex
+    gap: 42px

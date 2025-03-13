@@ -1,0 +1,113 @@
+@use '../variables' as *
+
+.container
+  background-color: #271C47
+  display: flex
+  color: $white
+  padding: 40px
+
+.container_section
+  max-width: 1280px
+  margin: auto
+  display: flex
+  gap: 120px
+
+  p
+    font-size: 14px
+    font-weight: 300
+
+.container_title
+  font-size: 32px
+
+.container_form
+  display: flex
+  flex-direction: column
+  justify-content: center
+  gap: 5px
+
+  label
+    display: flex
+    gap: 5px
+
+.container_form_container
+  display: flex
+  gap: 8px
+
+.second_container
+  background-color: $gray-100
+  padding: 40px
+
+.second_container_section
+  max-width: 1280px
+  margin: auto
+  display: flex
+  gap: 90px
+  justify-content: space-between
+
+.second_container_section_box
+  display: flex
+  flex-direction: column
+  gap: 18px
+
+  img
+    width: 164px
+    height: 48px
+
+  p
+    width: 285px
+    font-size: 14px
+    color: $gray-300
+    font-weight: 400
+
+  .second_container_section_box_icons
+    display: flex
+    gap: 26px
+    align-items: center
+
+    a
+      color: $gray-300
+      transition: 0.2s
+
+      &:hover
+        color: $tertiary-color
+
+.separator
+  display: inline-block
+  width: 1px
+  height: auto
+  background-color: $gray-150
+  margin: 0 10px
+
+.second_container_section_box_second
+  display: flex
+  gap: 100px
+
+  h1
+    color: #222222
+    font-size: 16px
+    opacity: 71%
+    margin-bottom: 20px
+
+  a
+    color: #222222
+    font-size: 14px
+    opacity: 71%
+    transition: 0.2s
+
+    &:hover
+      color: $tertiary-color
+
+  .container_items
+    display: flex
+    flex-direction: column
+    gap: 16px
+
+.tertiary_container
+  padding: 13px
+  display: flex
+  justify-content: center
+
+  p
+    font-size: 13px
+    color: $gray-300
+    font-weight: 300

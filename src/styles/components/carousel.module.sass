@@ -1,0 +1,45 @@
+@use '../variables' as *
+
+.carousel_container
+  display: flex
+  align-items: center
+  justify-content: center
+  max-width: 1364px
+  margin: 24px auto 0px auto
+  position: relative
+
+  .carousel
+    display: flex
+    overflow-x: auto
+    scroll-behavior: smooth
+    gap: 18px
+    padding: 14px 11px
+    max-width: 100%
+    scrollbar-width: none
+
+    &::-webkit-scrollbar
+      display: none
+
+  .carousel_btn
+    position: absolute
+    top: 50%
+    transform: translateY(-50%)
+    background-color: $white
+    color: #000000
+    border: none
+    padding: 5px 10px
+    cursor: pointer
+    font-size: 14px
+    z-index: 10
+    border-radius: 100%
+    transition: 0.3s
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3)
+
+    &:hover
+      background: rgba(0, 0, 0, 0.1)
+
+  .prev
+    left: -45px
+
+  .next
+    right: -45px

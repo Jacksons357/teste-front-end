@@ -1,0 +1,48 @@
+@use '../variables' as *
+
+.container
+  display: flex
+  flex-direction: column
+  width: 301px
+  min-width: 301px
+  max-width: 301px
+  height: 500px
+  min-height: 500px
+  max-height: 500px
+  padding: 14px
+  border-radius: 10px
+  background: #fff
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2)
+  transition: transform 0.3s ease, box-shadow 0.3s ease
+
+  &:hover
+    transform: scale(1.02)
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15)
+
+  img
+    width: 100%
+    max-width: 278px
+    height: auto
+
+  p
+    font-size: 15px
+    color: $gray-300
+    margin: 9px 0 12px 0
+
+  span
+    font-size: 16px
+    text-decoration: line-through
+    color: $gray-200
+
+  .price
+    font-size: 20px
+    font-weight: bold
+    color: $gray-300
+
+  .installments
+    font-size: 12px
+    color: $gray-300
+
+  .free_shipping
+    font-size: 12px
+    color: $primary-color
