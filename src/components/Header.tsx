@@ -12,6 +12,7 @@ import ShoppingCart from '@/assets/icons/header/ShoppingCart.png'
 
 import { TbCrown } from 'react-icons/tb'
 import SearchInput from './SearchInput'
+import { NavLink } from 'react-router'
 
 const tags = [
   {
@@ -69,31 +70,31 @@ const itemsShortcut = [
 const itemsNavBar = [
   {
     text: 'Todas Categorias',
-    url: '#',
+    url: '/all-categories',
   },
   {
     text: 'Supermercado',
-    url: '#',
+    url: '/market',
   },
   {
     text: 'Livros',
-    url: '#',
+    url: '/books',
   },
   {
     text: 'Moda',
-    url: '#',
+    url: '/fashion',
   },
   {
     text: 'Lançamentos',
-    url: '#',
+    url: '/releases',
   },
   {
     text: <strong>Oferta do dia</strong>,
-    url: '#',
+    url: '/offer-day',
   },
   {
     text: 'Assinatura',
-    url: '#',
+    url: '/subscription',
     icon: <TbCrown size={20} />,
   },
 ]
@@ -111,7 +112,7 @@ export default function Header() {
       </ul>
 
       <div className={styles.header_bar}>
-        <a href="">
+        <a href="/">
           <img src={Logo} alt="logo da econverse" className={styles.logo} />
         </a>
 
@@ -120,9 +121,9 @@ export default function Header() {
         <ul className={styles.header_bar_items}>
           {itemsShortcut.map((item, index) => (
             <li key={index}>
-              <a href={item.url}>
+              <NavLink to={item.url}>
                 <img src={item.src} alt={item.alt} />
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
@@ -132,10 +133,15 @@ export default function Header() {
         <ul className={styles.header_navbar_list}>
           {itemsNavBar.map((item, index) => (
             <li key={index}>
-              <a href={item.url}>
+              <NavLink
+                to={item.url}
+                className={({ isActive }) =>
+                  isActive ? `${styles.active_link}` : `${styles.inactive_link}`
+                }
+              >
                 <span>{item.icon}</span>
                 <p>{item.text}</p>
-              </a>
+              </NavLink>
             </li>
           ))}
         </ul>
