@@ -2,6 +2,7 @@ import CardProduct from '@/components/CardProduct'
 import Carousel from '@/components/Carousel'
 import RelatedProductsNavigation from '@/components/RelatedProductsNavigation'
 import Separator from '@/components/Separator'
+import { useProducts } from '@/lib/hooks/useProducts'
 import styles from '@/styles/components/related-products.module.sass'
 
 interface RelatedProducts {
@@ -15,6 +16,8 @@ export default function RelatedProducts({
   title,
   showNavigation,
 }: RelatedProducts) {
+  const { data } = useProducts()
+
   return (
     <section className={styles.content}>
       <Separator title={title} color={color} />
@@ -28,16 +31,14 @@ export default function RelatedProducts({
       )}
 
       <Carousel>
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
-        <CardProduct />
+        {data?.products?.map((product, index) => (
+          <CardProduct
+            key={index}
+            productName={product.productName}
+            photo={product.photo}
+            price={product.price}
+          />
+        ))}
       </Carousel>
     </section>
   )

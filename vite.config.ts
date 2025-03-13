@@ -10,4 +10,17 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  server: {
+    proxy: {
+      '/api/products': {
+        target: 'https://app.econverse.com.br',
+        changeOrigin: true,
+        rewrite: path =>
+          path.replace(
+            /^\/api\/products/,
+            '/teste-front-end/junior/tecnologia/lista-produtos/produtos.json'
+          ),
+      },
+    },
+  },
 })

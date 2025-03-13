@@ -1,17 +1,41 @@
 import Button from './Button'
 import styles from '@/styles/components/card-product.module.sass'
-import celular from '@/assets/celular.png'
 
-export default function CardProduct() {
+interface CardProductProps {
+  productName: string
+  photo: string
+  price: number
+}
+
+export default function CardProduct({
+  photo,
+  productName,
+  price,
+}: CardProductProps) {
+  const formattedPrice = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price)
+
+  const priceFull = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price + 1499)
+
+  const halfPrice = new Intl.NumberFormat('pt-BR', {
+    style: 'currency',
+    currency: 'BRL',
+  }).format(price / 2)
+
   return (
     <div className={styles.container}>
-      <img src={celular} alt="Celular" />
+      <img src={photo} alt="Celular" />
 
-      <p>Descrição do produto</p>
+      <p>{productName}</p>
 
-      <span>R$ 1.500,00</span>
-      <p className={styles.price}>R$ 1.200,00</p>
-      <p className={styles.installments}>12x de R$ 100,00 sem juros</p>
+      <span>{priceFull}</span>
+      <p className={styles.price}>{formattedPrice}</p>
+      <p className={styles.installments}>ou 2x de R${halfPrice} sem juros</p>
       <p className={styles.free_shipping}>Frete grátis</p>
 
       <Button text="COMPRAR" variant="secondary" />
