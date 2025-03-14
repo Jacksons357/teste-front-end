@@ -1,40 +1,55 @@
 import styles from '@/styles/components/related-products-navigation.module.sass'
+import { NavLink, useLocation } from 'react-router'
 
 const products = [
   {
     title: 'celular',
-    link: '#',
+    link: '/phone',
   },
   {
     title: 'acessórios',
-    link: '#',
+    link: '/accessories',
   },
   {
     title: 'tablets',
-    link: '#',
+    link: '/tablets',
   },
   {
     title: 'notebooks',
-    link: '#',
+    link: '/notebooks',
   },
   {
     title: 'tvs',
-    link: '#',
+    link: '/tvs',
   },
   {
     title: 'ver todos',
-    link: '#',
+    link: '/all',
   },
 ]
 
 export default function RelatedProductsNavigation() {
+  const location = useLocation()
+
   return (
     <ul className={styles.content}>
-      {products.map((product, index) => (
-        <a key={index} href={product.link} className={styles.content_link}>
-          <li className={styles.content_item}>{product.title}</li>
-        </a>
-      ))}
+      {products.map((product, index) => {
+        const isActive = location.pathname === product.link
+
+        return (
+          <NavLink
+            key={index}
+            to={product.link}
+            className={styles.content_link}
+          >
+            <li
+              className={`${styles.content_item} ${isActive ? styles.content_item_active : styles.content_item_default}`}
+            >
+              {product.title}
+            </li>
+          </NavLink>
+        )
+      })}
     </ul>
   )
 }

@@ -1,6 +1,7 @@
 import styles from '@/styles/components/modal-product.module.sass'
 import { useEffect } from 'react'
 import { IoIosClose } from 'react-icons/io'
+import { NavLink } from 'react-router'
 
 interface ModalProductProps {
   productName: string
@@ -48,9 +49,9 @@ export default function ModalProduct({
 
           <div>
             <p className={styles.description_short}>{descriptionShort}</p>
-            <a href="#" onClick={onCloseModal}>
+            <NavLink to="#" onClick={onCloseModal}>
               Veja mais detalhes do produto &gt;
-            </a>
+            </NavLink>
           </div>
 
           <div className={styles.container_controls}>
@@ -60,7 +61,9 @@ export default function ModalProduct({
               <button className={styles.controls_more}>+</button>
             </div>
 
-            <button className={styles.button_buy}>COMPRAR</button>
+            <button className={styles.button_buy} onClick={onCloseModal}>
+              COMPRAR
+            </button>
           </div>
         </div>
       </div>

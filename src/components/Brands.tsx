@@ -1,4 +1,5 @@
 import styles from '@/styles/components/brands.module.sass'
+import { NavLink } from 'react-router'
 
 interface BrandsProps {
   image: string
@@ -8,8 +9,8 @@ interface BrandsProps {
 
 export default function Brands({ image, alt, link }: BrandsProps) {
   return (
-    <a className={styles.container} href={link}>
+    <NavLink className={styles.container} to={link}>
       <img src={image} alt={alt} />
-    </a>
+    </NavLink>
   )
 }

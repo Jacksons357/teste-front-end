@@ -1,10 +1,9 @@
 import styles from '@/styles/components/footer.module.sass'
-import Button from './Button'
-import Input from './Input'
 import logo from '@/assets/Logo.png'
 import { FaInstagram } from 'react-icons/fa'
 import { SlSocialFacebook } from 'react-icons/sl'
 import { SlSocialLinkedin } from 'react-icons/sl'
+import FormFooter from './FormFooter'
 
 const icons = [
   {
@@ -81,18 +80,7 @@ export default function Footer() {
             </p>
           </div>
 
-          <form className={styles.container_form}>
-            <div className={styles.container_form_container}>
-              <Input type="text" placeholder="Digite seu nome" />
-              <Input type="email" placeholder="Digite seu email" />
-
-              <Button text="INSCREVER" variant="primary" />
-            </div>
-            <label htmlFor="checkbox">
-              <input type="checkbox" id="checkbox" />
-              Aceito os termos e condições
-            </label>
-          </form>
+          <FormFooter />
         </div>
       </div>
 

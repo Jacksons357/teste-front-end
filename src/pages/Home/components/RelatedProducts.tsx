@@ -4,6 +4,7 @@ import RelatedProductsNavigation from '@/components/RelatedProductsNavigation'
 import Separator from '@/components/Separator'
 import { useProducts } from '@/lib/hooks/useProducts'
 import styles from '@/styles/components/related-products.module.sass'
+import { NavLink } from 'react-router'
 
 interface RelatedProducts {
   color: string
@@ -26,7 +27,7 @@ export default function RelatedProducts({
         <RelatedProductsNavigation />
       ) : (
         <div className={styles.content_menu}>
-          <a href="$">Ver todos</a>
+          <NavLink to="/all-categories">Ver todos</NavLink>
         </div>
       )}
 

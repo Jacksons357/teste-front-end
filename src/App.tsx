@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import Layout from './layout'
+import ToastProvider from './providers/ToastProvider'
 
 const routes = [
   { path: '/', component: <Home /> },
@@ -16,20 +17,28 @@ const routes = [
   { path: '/drinks', component: <Home /> },
   { path: '/health', component: <Home /> },
   { path: '/fitness', component: <Home /> },
+  { path: '/phone', component: <Home /> },
+  { path: '/accessories', component: <Home /> },
+  { path: '/tablets', component: <Home /> },
+  { path: '/notebooks', component: <Home /> },
+  { path: '/tvs', component: <Home /> },
+  { path: '/all', component: <Home /> },
 ]
 
 export default function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        {routes.map(({ path, component }, index) => (
-          <Route
-            key={index}
-            path={path === '/' ? '' : path}
-            element={component}
-          />
-        ))}
-      </Route>
-    </Routes>
+    <ToastProvider>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          {routes.map(({ path, component }, index) => (
+            <Route
+              key={index}
+              path={path === '/' ? '' : path}
+              element={component}
+            />
+          ))}
+        </Route>
+      </Routes>
+    </ToastProvider>
   )
 }
