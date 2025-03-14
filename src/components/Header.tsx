@@ -5,14 +5,11 @@ import Truck from '@/assets/icons/header/Truck.png'
 import CreditCard from '@/assets/icons/header/CreditCard.png'
 
 import Logo from '@/assets/Logo.png'
-import Package from '@/assets/icons/header/Package.png'
-import Heart from '@/assets/icons/header/Heart.png'
-import UserCircle from '@/assets/icons/header/UserCircle.png'
-import ShoppingCart from '@/assets/icons/header/ShoppingCart.png'
 
 import { TbCrown } from 'react-icons/tb'
 import SearchInput from './SearchInput'
 import { NavLink } from 'react-router'
+import NavLinks from './NavLinks'
 
 const tags = [
   {
@@ -41,29 +38,6 @@ const tags = [
         <strong>Parcele</strong> suas compras
       </>
     ),
-  },
-]
-
-const itemsShortcut = [
-  {
-    src: Package,
-    alt: 'Icone para ver encomendas',
-    url: '#',
-  },
-  {
-    src: Heart,
-    alt: 'Icone para ver favoritos',
-    url: '#',
-  },
-  {
-    src: UserCircle,
-    alt: 'Icone para ver conta do usuário',
-    url: '#',
-  },
-  {
-    src: ShoppingCart,
-    alt: 'Icone para ver carrinho',
-    url: '#',
   },
 ]
 
@@ -118,15 +92,7 @@ export default function Header() {
 
         <SearchInput />
 
-        <ul className={styles.header_bar_items}>
-          {itemsShortcut.map((item, index) => (
-            <li key={index}>
-              <NavLink to={item.url}>
-                <img src={item.src} alt={item.alt} />
-              </NavLink>
-            </li>
-          ))}
-        </ul>
+        <NavLinks />
       </div>
 
       <nav className={styles.header_navbar}>

@@ -13,7 +13,9 @@ export default function BannerHomePage() {
           <strong>50% Off</strong> nos produtos
         </h2>
 
-        <Button text="Ver Produto" variant="primary" />
+        <a href="#related_products">
+          <Button text="Ver Produto" variant="primary" />
+        </a>
       </div>
     </section>
   )

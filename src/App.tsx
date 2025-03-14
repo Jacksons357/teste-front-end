@@ -2,6 +2,7 @@ import { Route, Routes } from 'react-router'
 import Home from './pages/Home'
 import Layout from './layout'
 import ToastProvider from './providers/ToastProvider'
+import CartProvider from './providers/CartProvider'
 
 const routes = [
   { path: '/', component: <Home /> },
@@ -28,17 +29,19 @@ const routes = [
 export default function App() {
   return (
     <ToastProvider>
-      <Routes>
-        <Route path="/" element={<Layout />}>
-          {routes.map(({ path, component }, index) => (
-            <Route
-              key={index}
-              path={path === '/' ? '' : path}
-              element={component}
-            />
-          ))}
-        </Route>
-      </Routes>
+      <CartProvider>
+        <Routes>
+          <Route path="/" element={<Layout />}>
+            {routes.map(({ path, component }, index) => (
+              <Route
+                key={index}
+                path={path === '/' ? '' : path}
+                element={component}
+              />
+            ))}
+          </Route>
+        </Routes>
+      </CartProvider>
     </ToastProvider>
   )
 }

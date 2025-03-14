@@ -20,7 +20,7 @@ export default function RelatedProducts({
   const { data } = useProducts()
 
   return (
-    <section className={styles.content}>
+    <section className={styles.content} id="related_products">
       <Separator title={title} color={color} />
 
       {showNavigation ? (
