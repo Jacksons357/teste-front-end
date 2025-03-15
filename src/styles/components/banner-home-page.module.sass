@@ -8,10 +8,16 @@
   height: 390px
   padding: 78px 0
 
+  @media (max-width: 768px)
+    margin-top: 62px
+
   .content
     max-width: 1280px
     flex-direction: column
     margin: auto
+
+    @media (max-width: 768px)
+      text-align: center
 
     h1
       color: $white
@@ -21,12 +27,18 @@
       margin-bottom: 10px
       text-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1)
 
+      @media (max-width: 768px)
+        font-size: 36px
+
     h2
       color: $white
       font-size: 32px
       font-weight: 300
       margin-bottom: 41px
       text-shadow: 4px 4px 4px 4px rgba(0, 0, 0, 0.1)
+
+      @media (max-width: 768px)
+        font-size: 24px
 
       strong
         color: $secondary-color

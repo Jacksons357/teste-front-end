@@ -10,6 +10,10 @@ import { TbCrown } from 'react-icons/tb'
 import SearchInput from './SearchInput'
 import { NavLink } from 'react-router'
 import NavLinks from './NavLinks'
+import { useState } from 'react'
+import { FiMenu } from 'react-icons/fi'
+
+import { IoClose } from 'react-icons/io5'
 
 const tags = [
   {
@@ -63,7 +67,7 @@ const itemsNavBar = [
     url: '/releases',
   },
   {
-    text: <strong>Oferta do dia</strong>,
+    text: 'Oferta do dia',
     url: '/offer-day',
   },
   {
@@ -74,6 +78,8 @@ const itemsNavBar = [
 ]
 
 export default function Header() {
+  const [menuOpen, setMenuOpen] = useState(false)
+
   return (
     <header className={styles.header}>
       <ul className={styles.header_tags}>
@@ -86,6 +92,13 @@ export default function Header() {
       </ul>
 
       <div className={styles.header_bar}>
+        <button
+          className={styles.menu_button}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          {!menuOpen ? <FiMenu size={24} /> : <IoClose size={24} />}
+        </button>
+
         <a href="/">
           <img src={Logo} alt="logo da econverse" className={styles.logo} />
         </a>
@@ -95,7 +108,7 @@ export default function Header() {
         <NavLinks />
       </div>
 
-      <nav className={styles.header_navbar}>
+      <div className={styles.header_navbar}>
         <ul className={styles.header_navbar_list}>
           {itemsNavBar.map((item, index) => (
             <li key={index}>
@@ -111,7 +124,19 @@ export default function Header() {
             </li>
           ))}
         </ul>
-      </nav>
+      </div>
+
+      {menuOpen && (
+        <nav className={styles.mobile_menu}>
+          <ul className={styles.mobile_menu_item}>
+            {itemsNavBar.map((item, index) => (
+              <li key={index}>
+                <NavLink to={item.url}>{item.text}</NavLink>
+              </li>
+            ))}
+          </ul>
+        </nav>
+      )}
     </header>
   )
 }

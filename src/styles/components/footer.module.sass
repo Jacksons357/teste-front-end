@@ -6,11 +6,19 @@
   color: $white
   padding: 40px
 
+  @media (max-width: 768px)
+    width: 100vw
+
 .container_section
   max-width: 1280px
   margin: auto
   display: flex
   gap: 120px
+
+  @media (max-width: 768px)
+    flex-direction: column
+    text-align: center
+    gap: 40px
 
   p
     font-size: 14px
@@ -30,10 +38,16 @@
   gap: 90px
   justify-content: space-between
 
+  @media (max-width: 768px)
+    flex-direction: column
+
 .second_container_section_box
   display: flex
   flex-direction: column
   gap: 18px
+
+  @media (max-width: 768px)
+    align-items: center
 
   img
     width: 164px
@@ -64,9 +78,18 @@
   background-color: $gray-150
   margin: 0 10px
 
+  @media (max-width: 768px)
+    width: auto
+    height: 1px
+
 .second_container_section_box_second
   display: flex
   gap: 100px
+
+  @media (max-width: 768px)
+    flex-direction: column
+    text-align: center
+    gap: 50px
 
   h1
     color: #222222
@@ -97,3 +120,6 @@
     font-size: 13px
     color: $gray-300
     font-weight: 300
+
+    @media (max-width: 768px)
+      font-size: 10px

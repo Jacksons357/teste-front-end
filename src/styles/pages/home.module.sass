@@ -15,6 +15,11 @@
   grid-template-columns: repeat(2, 1fr)
   gap: 13px
 
+  @media (max-width: 768px)
+    display: flex
+    justify-content: center
+    flex-wrap: wrap
+
 .brands
   max-width: 1280px
   margin: 90px auto
@@ -30,3 +35,8 @@
   .brands_item
     display: flex
     gap: 42px
+
+    @media (max-width: 768px)
+      flex-wrap: wrap
+      gap: 18px
+      justify-content: center
