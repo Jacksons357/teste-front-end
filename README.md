@@ -26,8 +26,8 @@ Clone o repositório e instale as dependências:
 
 ```sh
 # Clonar o repositório
-git clone https://github.com/seu-usuario/seu-repositorio.git
-cd seu-repositorio
+git clone https://github.com/Jacksons357/teste-front-end.git
+cd teste-front-end
 
 # Instalar dependências com pnpm (recomendado)
 pnpm install
