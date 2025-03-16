@@ -11,14 +11,23 @@ Antes de começar, certifique-se de ter os seguintes requisitos instalados:
 - [pnpm](https://pnpm.io/) (recomendado) ou npm/yarn
 - Navegador atualizado (Google Chrome recomendado para testes com Cypress)
 
+## Compatibilidade e Responsividade
+
+Este projeto foi desenvolvido para ser totalmente responsivo, garantindo uma ótima experiência em diferentes dispositivos, incluindo:
+
+- **Dispositivos móveis** (smartphones e tablets)
+- **Desktops** (telas grandes)
+
+O layout e os componentes foram ajustados para se adaptarem de forma fluida a diferentes tamanhos de tela.
+
 ## Instalação
 
 Clone o repositório e instale as dependências:
 
 ```sh
 # Clonar o repositório
-git clone https://github.com/Jacksons357/teste-front-end.git
-cd teste-front-end
+git clone https://github.com/seu-usuario/seu-repositorio.git
+cd seu-repositorio
 
 # Instalar dependências com pnpm (recomendado)
 pnpm install
