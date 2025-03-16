@@ -63,7 +63,11 @@ export default function ModalProduct({
   return (
     <div className={styles.container}>
       <div className={styles.modal}>
-        <button className={styles.closeButton} onClick={onCloseModal}>
+        <button
+          className={styles.closeButton}
+          onClick={onCloseModal}
+          data-testid="close_button"
+        >
           <IoIosClose size={40} />
         </button>
 
