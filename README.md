@@ -75,3 +75,6 @@ pnpm cypress run
 ---
 
 Qualquer dúvida, fique à vontade para entrar em contato!
+
+Email: contato@devjackson.tech  
+Celular: (11) 99315-4203
