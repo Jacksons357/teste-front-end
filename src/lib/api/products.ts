@@ -1,10 +1,8 @@
 interface Product {
-  id: number;
-  name: string;
-  image: string;
+  productName: string;
+  descriptionShort: string;
+  photo: string;
   price: number;
-  description: string;
-  category: string;
 }
 
 interface ProductsResponse {
