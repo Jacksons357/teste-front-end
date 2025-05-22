@@ -142,7 +142,7 @@ export default function Footer() {
       </div>
 
       <div className={styles.tertiary_container}>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p>Desenvolvido por <a href="https://devjackson.tech" target='_blank'>Devjackson</a></p>
       </div>
     </footer>
   )
